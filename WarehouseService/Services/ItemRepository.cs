@@ -19,7 +19,6 @@ public class ItemRepository : IItemRepository
 
     public async Task<List<Item>> GetItemsAsync()
     {
-        // Fetch all products asynchronously. If no items exist, ToListAsync() returns an empty list.
         var result = await _context.Products.ToListAsync();
         return result.Count == 0 ? new List<Item>() : result;
     }
